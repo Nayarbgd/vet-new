@@ -1,0 +1,556 @@
+ACTÚA COMO UN DIRECTOR CREATIVO SENIOR, DISEÑADOR DE EXPERIENCIAS DIGITALES PREMIUM Y DESARROLLADOR FRONTEND EXPERTO. (la pagina debe ser solo en ingles)
+
+Tu misión es construir una landing page corporativa cinematográfica para una clínica veterinaria llamada:
+
+SAFE CARE VETERINARY CLINIC (SCVC)
+
+OBJETIVO PRINCIPAL:
+Generar llamadas telefónicas inmediatas y transmitir una sensación emocional de confianza, amor por los animales y tranquilidad para los dueños.
+
+NO posicionar la clínica como una simple veterinaria.
+
+Posicionarla como:
+
+"A trusted partner that treats pets like family, provides expert medical guidance, and makes pet healthcare effortless."
+
+────────────────────────────
+
+DIRECCIÓN ESTÉTICA
+
+PRESET: SOFT BLOOM
+
+IDENTIDAD:
+Una boutique premium para mascotas donde la medicina veterinaria se encuentra con el cuidado emocional.
+
+PALETA
+
+Primary:
+#FDF2F4
+
+Accent:
+#E11D79
+
+Background:
+#FFFBFC
+
+Dark:
+#1F1F23
+
+Tipografía:
+
+Headings:
+DM Sans
+
+Editorial / Drama:
+Cormorant Italic
+
+Data:
+Inconsolata
+
+Mood visual para imágenes:
+
+soft petals
+premium veterinary care
+happy pet owners
+warm lighting
+clean clinic
+cats
+dogs
+gentle interactions
+soft pink highlights
+luxury wellness atmosphere
+
+Utilizar fotografías reales estilo Unsplash de:
+
+• gatos felices
+• perros tranquilos
+• veterinarios interactuando con mascotas
+• dueños abrazando mascotas
+• momentos emocionales
+
+────────────────────────────
+
+ARQUITECTURA GENERAL
+
+FLUJO PERSONALIZADO
+
+Navbar
+→ Hero H2 Narrativo Split
+→ Features (3 Micro UIs)
+→ Social Proof SP2 Carrusel Testimonios
+→ Proceso P3
+→ About Team
+→ CTA Final Cinemático
+→ Footer
+
+────────────────────────────
+
+NAVBAR
+
+VARIANTE:
+La Isla Flotante
+
+Características:
+
+• Fixed
+• Glassmorphism
+• Pill shaped
+• Centrada
+
+Links:
+
+Home
+Services
+Pet Taxi
+About
+Contact
+
+CTA:
+
+Call Now
+
+Comportamiento:
+
+Al hacer scroll:
+transición a fondo blur
+border suave
+shadow elegante
+
+Animación GSAP
+
+────────────────────────────
+
+HERO
+
+VARIANTE H2
+Narrativo Split
+
+Layout 50/50
+
+IZQUIERDA
+
+Badge:
+
+Trusted Veterinary Care in Dubai
+
+Headline:
+
+Your Pet Deserves
+Care That Feels Like
+Family.
+
+La palabra:
+
+Family
+
+en Cormorant Italic enorme.
+
+Subheadline:
+
+Professional veterinary medicine delivered with genuine compassion, clear communication, and stress-free convenience.
+
+Copy adicional:
+
+From routine checkups to complex treatments, every pet receives expert care, personal attention, and the love they deserve.
+
+CTA Primario:
+
+Call the Clinic
+
+CTA Secundario:
+
+Book Pet Taxi
+
+Social Proof debajo:
+
+★★★★★
+Trusted by hundreds of pet owners
+
+Mini avatars circulares.
+
+DERECHA
+
+Collage elegante de:
+
+• veterinario sosteniendo mascotas
+• gato persa
+• mascota feliz después del grooming
+
+Tarjetas flotantes:
+
++ Free Pet Pickup & Drop-Off
+
++ Compassionate Veterinary Team
+
++ Clear Explanations Every Step
+
+Animación:
+
+Texto:
+fade-up stagger
+
+Imágenes:
+slide-in derecha
+
+────────────────────────────
+
+FEATURES
+
+UTILIZAR EXACTAMENTE ESTAS 3 MICRO-UIs
+
+FEATURE 1
+F5 Toggle Before / After
+
+Título:
+
+Stress-Free Veterinary Visits
+
+Before:
+
+Finding transportation
+Long waiting times
+Confusing communication
+
+After:
+
+Pet Taxi Included
+Easy Scheduling
+Clear Guidance
+
+Animación draggable suave.
+
+────────────────────────────
+
+FEATURE 2
+F6 Notification Stack
+
+Título:
+
+Real-Time Care Updates
+
+Simulación:
+
+"Oliver completed grooming"
+
+"Vaccination completed"
+
+"Pet taxi arriving"
+
+"Doctor review finished"
+
+Notificaciones aparecen cada 2.5 segundos.
+
+────────────────────────────
+
+FEATURE 3
+F10 Rotating Testimonial Mini
+
+Rotar entre frases reales inspiradas en reseñas:
+
+"The team treated my cat like family."
+
+"The pet taxi service saved me so much time."
+
+"The doctors explained everything clearly."
+
+Mostrar avatar circular.
+
+────────────────────────────
+
+SOCIAL PROOF
+
+SP2
+Carrusel Premium
+
+Usar testimonios reales adaptados:
+
+TESTIMONIAL 1
+
+"I couldn't be happier with the care my fur babies receive. The veterinarians are compassionate and always take time to explain everything."
+
+TESTIMONIAL 2
+
+"The pick-up and drop-off service made everything incredibly convenient."
+
+TESTIMONIAL 3
+
+"My rescued cat recovered thanks to their guidance and support."
+
+TESTIMONIAL 4
+
+"The staff genuinely love animals. You can feel it from the moment you arrive."
+
+TESTIMONIAL 5
+
+"They stayed beyond closing hours to make sure my pet was okay."
+
+Cada tarjeta:
+
+avatar
+nombre
+5 estrellas
+
+Auto-scroll cada 5 segundos.
+
+────────────────────────────
+
+PROCESO
+
+P3
+Steps Numerados
+
+Título:
+
+How We Care For Your Pet
+
+Step 01
+
+Schedule Appointment
+
+Call or message the clinic.
+
+Step 02
+
+Pet Taxi Pickup
+
+We collect your pet safely from home.
+
+Step 03
+
+Veterinary Care
+
+Examination, diagnosis and treatment.
+
+Step 04
+
+Safe Return Home
+
+Your pet returns comfortable and cared for.
+
+Animación stagger.
+
+────────────────────────────
+
+ABOUT SECTION
+
+Título:
+
+Meet The Team Behind The Care
+
+Descripción:
+
+Our veterinarians combine medical expertise with genuine compassion, creating an environment where pets feel safe and owners feel informed.
+
+Grid elegante.
+
+Miembros:
+
+Dr. Mohammed Kizo
+
+Lead Veterinarian
+
+Dr. Thomas
+
+Veterinarian
+
+Dr. Mazen
+
+Veterinarian
+
+Support Team
+
+Pet Care Specialists
+
+Fotos circulares premium.
+
+────────────────────────────
+
+SECCIÓN DIFERENCIADOR
+
+Diseño editorial.
+
+Headline:
+
+More Than A Veterinary Clinic
+
+Bloque izquierdo:
+
+Most clinics focus on treatments.
+
+Bloque derecho:
+
+We focus on relationships.
+
+Texto:
+
+We believe great veterinary care starts with trust, communication, and genuine love for animals.
+
+Nuestros clientes nunca se sienten perdidos, confused or rushed.
+
+Every decision is explained.
+Every question is welcomed.
+Every pet is treated like family.
+
+Animación reveal.
+
+────────────────────────────
+
+CTA FINAL
+
+VARIANTE CTA3
+
+Fondo Accent.
+
+Headline:
+
+Speak With A Veterinarian Today
+
+Subheadline:
+
+Get expert guidance, compassionate care, and stress-free support for your pet.
+
+Botón gigante:
+
+Call Now
+
+Botón secundario:
+
+Book Pet Taxi
+
+Debajo:
+
+★★★★★
+Trusted by pet owners across Dubai
+
+Mini avatares.
+
+Animación parallax suave.
+
+────────────────────────────
+
+FOOTER
+
+Fondo oscuro.
+
+Contenido:
+
+SAFE CARE VETERINARY CLINIC
+
+Compassion. Expertise. Convenience.
+
+Links:
+
+Services
+Pet Taxi
+About
+Contact
+
+Indicador:
+
+● System Active
+
+Veterinary Care Platform v1.0
+
+Copyright.
+
+────────────────────────────
+
+ESTILO VISUAL GLOBAL
+
+• Cinematic
+• Premium
+• Emotional
+• Elegant
+• Modern
+• Boutique healthcare
+
+NO parecer plantilla.
+
+NO parecer SaaS genérico.
+
+NO parecer clínica fría.
+
+Debe sentirse como:
+
+"The Apple Store experience for pet healthcare."
+
+────────────────────────────
+
+ANIMACIONES
+
+GSAP + ScrollTrigger
+
+Hero stagger:
+0.08
+
+Cards:
+0.15
+
+Hover:
+
+scale 1.03
+
+translateY(-1px)
+
+Botones magnéticos.
+
+Parallax suave en imágenes.
+
+Reveal sections on scroll.
+
+────────────────────────────
+
+TEXTURA Y DISEÑO
+
+Global noise overlay
+opacity 0.05
+
+Rounded corners:
+2rem–3rem
+
+Sombras suaves.
+
+Mucho espacio negativo.
+
+Jerarquía editorial.
+
+────────────────────────────
+
+STACK TÉCNICO
+
+React 19
+Tailwind CSS 3.4.17
+GSAP 3
+ScrollTrigger
+Lucide React
+
+Google Fonts:
+
+DM Sans
+Cormorant Garamond
+Inconsolata
+
+Imágenes reales.
+Sin placeholders.
+
+Diseño completamente responsive.
+
+Mobile-first.
+
+────────────────────────────
+
+DIRECTIVA FINAL
+
+No construyas una web de veterinaria.
+
+Construye una experiencia emocional que haga sentir al visitante que su mascota estará segura, amada y bien cuidada.
+
+La emoción debe aparecer antes que los servicios.
+
+La confianza antes que los tratamientos.
+
+La relación antes que la medicina.
+
+Cada scroll debe aumentar la sensación de tranquilidad, cariño y profesionalismo.
+
+El resultado debe parecer una marca premium de cuidado animal, no una clínica tradicional.
