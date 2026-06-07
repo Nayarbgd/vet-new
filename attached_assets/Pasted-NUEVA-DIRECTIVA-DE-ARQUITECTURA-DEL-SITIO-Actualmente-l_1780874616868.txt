@@ -1,0 +1,218 @@
+NUEVA DIRECTIVA DE ARQUITECTURA DEL SITIO
+
+Actualmente la navegación tiene varias pestañas. Quiero convertir el sitio en una estructura multipágina real, NO una landing page de una sola página con scroll.
+
+Crear las siguientes páginas independientes:
+
+1. HOME (/)
+2. SERVICES (/services)
+3. PET TAXI (/pet-taxi)
+4. ABOUT US (/about)
+5. CONTACT (/contact)
+
+────────────────────────────
+
+HOME
+
+Objetivo:
+Generar confianza emocional y conseguir llamadas.
+
+Contenido:
+
+• Hero principal
+• Propuestas de valor
+• Testimonios destacados
+• Introducción breve a servicios
+• CTA "Call Now"
+• CTA "Book Pet Taxi"
+
+Esta página debe funcionar como la página de ventas principal.
+
+────────────────────────────
+
+SERVICES PAGE
+
+URL:
+/services
+
+Objetivo:
+Explicar detalladamente todos los servicios.
+
+Hero:
+
+Headline:
+Complete Veterinary Care For Every Stage Of Your Pet's Life
+
+Subheadline:
+From preventive care to advanced treatment, we provide comprehensive veterinary services with compassion and expertise.
+
+Secciones individuales para:
+
+• General Consultation
+• Vaccinations
+• Surgery
+• Dental Care
+• Grooming
+• Laboratory Tests
+• Emergency Support
+• Deworming
+• Microchipping
+• Pet Travel Documentation
+
+Cada servicio debe incluir:
+
+• Descripción detallada
+• Beneficios
+• Cuándo es necesario
+• Qué esperar durante la visita
+• CTA "Call Now"
+
+Agregar FAQ específica de servicios.
+
+────────────────────────────
+
+PET TAXI PAGE
+
+URL:
+/pet-taxi
+
+Objetivo:
+Vender el servicio diferenciador de transporte.
+
+Hero:
+
+Headline:
+Veterinary Care Without The Travel Stress
+
+Subheadline:
+We safely pick up your pet, provide the required care, and return them home comfortably.
+
+Secciones:
+
+1. How Pet Taxi Works
+2. Benefits For Busy Pet Owners
+3. Safety Procedures
+4. Pickup & Dropoff Process
+5. Frequently Asked Questions
+
+Agregar timeline visual:
+
+Book
+Pickup
+Treatment
+Return Home
+
+Mostrar testimonios relacionados específicamente con el Pet Taxi.
+
+CTA repetido varias veces:
+
+Book Pet Taxi
+
+Esta página debe sentirse como un servicio premium tipo concierge.
+
+────────────────────────────
+
+ABOUT PAGE
+
+URL:
+/about
+
+Objetivo:
+Construir confianza.
+
+Hero:
+
+Headline:
+The People Behind The Care
+
+Incluir:
+
+• Historia de SCVC
+• Filosofía de cuidado
+• Misión
+• Valores
+
+Valores principales:
+
+Compassion
+Trust
+Communication
+Expertise
+Convenience
+
+Crear perfiles completos para:
+
+• Dr. Mohammed Kizo
+• Dr. Thomas
+• Dr. Mazen
+
+Agregar sección:
+
+Why Pet Owners Trust Us
+
+Utilizar testimonios centrados en la atención humana y el amor por los animales.
+
+────────────────────────────
+
+CONTACT PAGE
+
+URL:
+/contact
+
+Objetivo:
+Convertir visitantes en llamadas.
+
+Hero:
+
+Headline:
+Speak With A Veterinarian Today
+
+Contenido:
+
+• Teléfono clickeable
+• WhatsApp clickeable
+• Dirección
+• Horarios
+• Google Maps embebido
+• Formulario de contacto
+
+Agregar:
+
+Emergency Contact Section
+
+CTA fijo:
+
+Call Now
+
+────────────────────────────
+
+REQUISITOS TÉCNICOS
+
+Usar React Router.
+
+Crear rutas reales:
+
+/
+/services
+/pet-taxi
+/about
+/contact
+
+La Navbar debe permanecer igual en todas las páginas.
+
+Mantener exactamente el mismo sistema visual:
+Soft Bloom.
+
+Mantener la misma paleta,
+tipografías,
+animaciones GSAP,
+microinteracciones,
+espaciados,
+componentes y calidad visual.
+
+Cada página debe tener contenido suficiente para posicionamiento SEO local y transmitir autoridad.
+
+NO reutilizar únicamente el mismo contenido.
+Expandir cada tema con explicaciones reales y secciones específicas.
+
+El sitio debe sentirse como una marca premium de cuidado animal con una experiencia editorial moderna.
