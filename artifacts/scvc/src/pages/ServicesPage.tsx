@@ -8,6 +8,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
+import SeoHead from "@/components/SeoHead";
 
 const services = [
   {
@@ -225,6 +226,19 @@ const faqs = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+};
+
 function ServiceCard({ service, index }: { service: typeof services[0]; index: number }) {
   const [open, setOpen] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -247,7 +261,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
     <div ref={cardRef} id={service.id} className="bg-card border border-border rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
       <div className="p-8">
         <div className="flex items-start gap-6 mb-6">
-          <div className={`p-4 rounded-2xl shrink-0 ${service.color}`}>
+          <div className={`p-4 rounded-2xl shrink-0 ${service.color}`} aria-hidden="true">
             <Icon className="w-7 h-7" />
           </div>
           <div className="flex-1">
@@ -260,10 +274,10 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
 
         <div className="mb-6">
           <h3 className="font-bold text-sm uppercase tracking-wider text-foreground mb-3">Key Benefits</h3>
-          <ul className="space-y-2">
+          <ul className="space-y-2" aria-label={`Benefits of ${service.title}`}>
             {service.benefits.map((b, i) => (
               <li key={i} className="flex items-start gap-3 text-sm text-foreground/80">
-                <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5" aria-hidden="true">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
                 </div>
                 {b}
@@ -274,14 +288,16 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
 
         <button
           onClick={() => setOpen(!open)}
-          className="flex items-center gap-2 text-sm font-bold text-primary hover:text-primary/80 transition-colors"
+          aria-expanded={open}
+          aria-controls={`${service.id}-details`}
+          className="flex items-center gap-2 text-sm font-bold text-primary hover:text-primary/80 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
         >
           {open ? "Show less" : "When is this needed & what to expect"}
-          {open ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+          {open ? <ChevronUp className="w-4 h-4" aria-hidden="true" /> : <ChevronDown className="w-4 h-4" aria-hidden="true" />}
         </button>
 
         {open && (
-          <div className="mt-6 pt-6 border-t border-border space-y-4">
+          <div id={`${service.id}-details`} className="mt-6 pt-6 border-t border-border space-y-4">
             <div>
               <h4 className="font-bold text-sm uppercase tracking-wider text-foreground mb-2">When Is It Needed?</h4>
               <p className="text-sm text-foreground/70 leading-relaxed">{service.when}</p>
@@ -297,9 +313,10 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       <div className="px-8 pb-8">
         <Link
           href="/contact"
-          className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-full text-sm font-bold transition-all hover:shadow-md hover:scale-105 active:scale-95"
+          aria-label={`Book ${service.title} appointment`}
+          className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-full text-sm font-bold transition-all hover:shadow-md hover:scale-105 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
         >
-          <Phone className="w-4 h-4" />
+          <Phone className="w-4 h-4" aria-hidden="true" />
           Call Now
         </Link>
       </div>
@@ -313,10 +330,11 @@ function FaqItem({ q, a }: { q: string; a: string }) {
     <div className="border border-border rounded-2xl overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-secondary/40 transition-colors"
+        aria-expanded={open}
+        className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-secondary/40 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset"
       >
         <span className="font-bold text-foreground pr-4">{q}</span>
-        {open ? <ChevronUp className="w-5 h-5 text-primary shrink-0" /> : <ChevronDown className="w-5 h-5 text-muted-foreground shrink-0" />}
+        {open ? <ChevronUp className="w-5 h-5 text-primary shrink-0" aria-hidden="true" /> : <ChevronDown className="w-5 h-5 text-muted-foreground shrink-0" aria-hidden="true" />}
       </button>
       {open && (
         <div className="px-6 pb-5 text-foreground/70 leading-relaxed text-sm border-t border-border pt-4">
@@ -343,13 +361,19 @@ export default function ServicesPage() {
 
   return (
     <main className="min-h-screen bg-background text-foreground">
+      <SeoHead
+        title="Veterinary Services Dubai | SCVC — Consultations, Surgery, Dental & More"
+        description="Safe Care Veterinary Clinic offers comprehensive vet services in Dubai: general consultations, vaccinations, surgery, dental care, grooming, lab tests, deworming, microchipping and pet travel documentation."
+        canonical="https://scvc.ae/services"
+        schema={faqSchema}
+      />
       <Navbar />
 
       <section ref={heroRef} className="relative pt-40 pb-24 bg-secondary/30 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
         <div className="container mx-auto px-6 max-w-5xl text-center">
           <div className="services-hero-el inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-bold uppercase tracking-wider mb-6">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" aria-hidden="true"></span>
             Comprehensive Veterinary Care
           </div>
           <h1 className="services-hero-el text-4xl md:text-5xl lg:text-6xl font-bold font-sans text-foreground leading-[1.1] tracking-tight mb-6">
@@ -362,23 +386,23 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-6 bg-background border-b border-border sticky top-[72px] z-30 backdrop-blur-md bg-background/80">
+      <nav aria-label="Jump to service" className="py-6 bg-background border-b border-border sticky top-[72px] z-30 backdrop-blur-md bg-background/80">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
             {services.map((s) => (
               <a
                 key={s.id}
                 href={`#${s.id}`}
-                className="shrink-0 px-4 py-2 rounded-full border border-border text-sm font-medium text-foreground/70 hover:border-primary hover:text-primary transition-colors bg-background"
+                className="shrink-0 px-4 py-2 rounded-full border border-border text-sm font-medium text-foreground/70 hover:border-primary hover:text-primary transition-colors bg-background focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               >
                 {s.title}
               </a>
             ))}
           </div>
         </div>
-      </section>
+      </nav>
 
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-background" aria-label="Our veterinary services">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid md:grid-cols-2 gap-8">
             {services.map((service, idx) => (
@@ -388,7 +412,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-24 bg-secondary/30">
+      <section className="py-24 bg-secondary/30" aria-label="Frequently asked questions">
         <div className="container mx-auto px-6 max-w-3xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold font-sans mb-4">Frequently Asked Questions</h2>
@@ -402,12 +426,12 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="relative py-32 overflow-hidden bg-[#E11D79]">
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` }}></div>
+      <section className="relative py-32 overflow-hidden bg-[#E11D79]" aria-label="Book an appointment">
+        <div className="absolute inset-0 opacity-10" aria-hidden="true" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` }}></div>
         <div className="container mx-auto px-6 max-w-3xl text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold text-white font-sans mb-6">Ready to Book?</h2>
           <p className="text-white/90 text-xl mb-10 font-medium">Call us today and let's take care of your pet together.</p>
-          <Link href="/contact" className="inline-flex bg-white text-[#E11D79] px-10 py-5 rounded-full text-lg font-bold hover:shadow-xl hover:scale-105 transition-all active:scale-95">
+          <Link href="/contact" className="inline-flex bg-white text-[#E11D79] px-10 py-5 rounded-full text-lg font-bold hover:shadow-xl hover:scale-105 transition-all active:scale-95 focus:outline-none focus-visible:ring-4 focus-visible:ring-white/50">
             Call Now
           </Link>
         </div>
