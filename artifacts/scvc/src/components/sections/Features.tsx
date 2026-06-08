@@ -21,8 +21,8 @@ function BeforeAfterFeature() {
     if (isDragging) {
       window.addEventListener("mouseup", handleMouseUp);
       window.addEventListener("mousemove", handleMouseMove);
-      window.addEventListener("touchend", handleMouseUp);
-      window.addEventListener("touchmove", handleTouchMove);
+      window.addEventListener("touchend", handleMouseUp, { passive: true });
+      window.addEventListener("touchmove", handleTouchMove, { passive: true });
     }
 
     return () => {

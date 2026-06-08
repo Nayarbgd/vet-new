@@ -11,7 +11,10 @@ export default function CtaFinal() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    if (bgRef.current) {
+    // Parallax is GPU-expensive on mobile — only enable on tablet/desktop
+    const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+
+    if (bgRef.current && isDesktop) {
       gsap.to(bgRef.current, {
         y: "20%",
         ease: "none",
@@ -88,9 +91,9 @@ export default function CtaFinal() {
           </div>
           <p className="text-white/90 font-medium font-sans">Trusted by pet owners across Dubai</p>
           <div className="flex -space-x-3 mt-2" aria-hidden="true">
-            <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="" loading="lazy" decoding="async" className="w-10 h-10 rounded-full border-2 border-[#E11D79] object-cover" />
-            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="" loading="lazy" decoding="async" className="w-10 h-10 rounded-full border-2 border-[#E11D79] object-cover" />
-            <img src="https://randomuser.me/api/portraits/women/64.jpg" alt="" loading="lazy" decoding="async" className="w-10 h-10 rounded-full border-2 border-[#E11D79] object-cover" />
+            <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="" loading="lazy" decoding="async" width="40" height="40" className="w-10 h-10 rounded-full border-2 border-[#E11D79] object-cover" />
+            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="" loading="lazy" decoding="async" width="40" height="40" className="w-10 h-10 rounded-full border-2 border-[#E11D79] object-cover" />
+            <img src="https://randomuser.me/api/portraits/women/64.jpg" alt="" loading="lazy" decoding="async" width="40" height="40" className="w-10 h-10 rounded-full border-2 border-[#E11D79] object-cover" />
           </div>
         </div>
       </div>

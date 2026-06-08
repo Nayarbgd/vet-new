@@ -185,11 +185,26 @@
     @apply border-border;
   }
 
+  html {
+    /* Native momentum scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
+    /* Prevent overscroll bounce from fighting page animations */
+    overscroll-behavior-y: none;
+    /* Let the browser adjust text size on orientation change */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
   body {
     @apply font-sans antialiased bg-background text-foreground;
+    /* Prevent horizontal overflow from causing scroll jank */
+    overflow-x: hidden;
   }
 }
 
+/* ─── Noise texture overlay ─────────────────────────────────────────────────
+   Promoted to its own compositor layer so it never triggers a repaint
+   during scroll. Hidden on mobile where the paint cost outweighs the effect. */
 body::after {
   content: '';
   position: fixed;
@@ -197,5 +212,66 @@ body::after {
   pointer-events: none;
   z-index: 9999;
   opacity: 0.05;
+  /* GPU layer — isolates repaints from the rest of the page */
+  transform: translateZ(0);
+  will-change: transform;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Hide the expensive SVG filter overlay on mobile */
+@media (max-width: 767px) {
+  body::after {
+    display: none;
+  }
+}
+
+/* ─── GPU acceleration hints for GSAP-animated elements ─────────────────────
+   Telling the browser these elements will transform/fade lets it promote
+   them to their own compositor layers before the animation starts,
+   eliminating the first-frame "pop" and reducing paint during scroll. */
+.hero-text-element,
+.hero-image-element,
+.process-step,
+.team-card,
+.diff-fade,
+.cta-fade,
+.services-hero-el {
+  will-change: transform, opacity;
+}
+
+/* ─── Infinite marquee carousel ─────────────────────────────────────────────
+   Pure CSS transform animation — runs on the compositor thread, never
+   touches the main JS thread or causes layout recalculation. */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marquee 35s linear infinite;
+  will-change: transform;
+}
+
+/* Pause on hover for desktop users */
+@media (hover: hover) {
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+
+  .hero-text-element,
+  .hero-image-element,
+  .process-step,
+  .team-card,
+  .diff-fade,
+  .cta-fade,
+  .services-hero-el {
+    will-change: auto;
+  }
 }
