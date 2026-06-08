@@ -17,7 +17,7 @@ const localBusinessSchema = {
   description:
     "Professional veterinary care in Dubai delivered with genuine compassion, clear communication, and stress-free convenience. Serving dogs, cats and rabbits.",
   url: "https://scvc.ae",
-  telephone: "+971000000000",
+  telephone: "+97148343287",
   priceRange: "$$",
   image: "https://scvc.ae/opengraph.jpg",
   address: {
@@ -72,7 +72,7 @@ const localBusinessSchema = {
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Microchipping" } },
     ],
   },
-  sameAs: ["https://wa.me/971000000000"],
+  sameAs: ["https://wa.me/97148343287", "https://maps.app.goo.gl/xAxcYF1q4h7XQUjh6"],
 };
 
 export default function LandingPage() {

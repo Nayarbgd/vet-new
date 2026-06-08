@@ -29,9 +29,9 @@ const contactMethods = [
   {
     icon: Phone,
     label: "Call Us",
-    value: "+971 00 000 0000",
+    value: "04 834 3287",
     sub: "Speak directly with our team",
-    href: "tel:+971000000000",
+    href: "tel:+97148343287",
     color: "bg-blue-100 text-blue-600",
     cta: "Call Now",
   },
@@ -40,7 +40,7 @@ const contactMethods = [
     label: "WhatsApp",
     value: "Chat on WhatsApp",
     sub: "Quick responses during working hours",
-    href: "https://wa.me/971000000000",
+    href: "https://wa.me/97148343287",
     color: "bg-green-100 text-green-600",
     cta: "Open WhatsApp",
   },
@@ -48,8 +48,8 @@ const contactMethods = [
     icon: MapPin,
     label: "Visit Us",
     value: "Dubai, UAE",
-    sub: "Contact us for the exact address",
-    href: "#map",
+    sub: "Tap to open in Google Maps",
+    href: "https://maps.app.goo.gl/xAxcYF1q4h7XQUjh6",
     color: "bg-primary/10 text-primary",
     cta: "Get Directions",
   },
@@ -123,15 +123,15 @@ export default function ContactPage() {
           </p>
           <div className="contact-hero-el flex flex-col sm:flex-row justify-center gap-4">
             <a
-              href="tel:+971000000000"
-              aria-label="Call Safe Care Veterinary Clinic now"
+              href="tel:+97148343287"
+              aria-label="Call Safe Care Veterinary Clinic on 04 834 3287"
               className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-5 rounded-full text-lg font-bold transition-all hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >
               <Phone className="w-5 h-5" aria-hidden="true" />
-              Call Now
+              04 834 3287
             </a>
             <a
-              href="https://wa.me/971000000000"
+              href="https://wa.me/97148343287"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Chat with SCVC on WhatsApp (opens in new tab)"
@@ -199,21 +199,55 @@ export default function ContactPage() {
             </div>
             <div id="map">
               <h2 className="text-3xl md:text-4xl font-bold font-sans mb-8">Find Us</h2>
-              <div className="rounded-3xl overflow-hidden border border-border shadow-sm h-72 bg-secondary flex items-center justify-center mb-6 relative">
-                <iframe
-                  title="Safe Care Veterinary Clinic location in Dubai, UAE"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462560.6833386425!2d54.89782700000001!3d25.076022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2s!4v1748296440000!5m2!1sen!2s"
-                  className="w-full h-full border-0"
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
+
+              {/* Map preview card — links to the real clinic location */}
+              <a
+                href="https://maps.app.goo.gl/xAxcYF1q4h7XQUjh6"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open Safe Care Veterinary Clinic in Google Maps"
+                className="group block rounded-3xl overflow-hidden border border-border shadow-sm mb-6 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              >
+                <div className="h-64 bg-secondary/60 relative flex flex-col items-center justify-center gap-4 p-8 text-center transition-colors group-hover:bg-secondary">
+                  {/* Decorative grid lines */}
+                  <div className="absolute inset-0 pointer-events-none opacity-10" aria-hidden="true"
+                    style={{ backgroundImage: "linear-gradient(hsl(var(--border)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px)", backgroundSize: "40px 40px" }}
+                  />
+                  <div className="relative z-10 w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                    <MapPin className="w-7 h-7" aria-hidden="true" />
+                  </div>
+                  <div className="relative z-10">
+                    <p className="font-bold text-foreground text-lg mb-1">Safe Care Veterinary Clinic</p>
+                    <p className="text-sm text-muted-foreground">Dubai, United Arab Emirates</p>
+                  </div>
+                  <span className="relative z-10 inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-2.5 rounded-full text-sm font-bold group-hover:bg-primary/90 transition-colors shadow-md">
+                    <MapPin className="w-4 h-4" aria-hidden="true" />
+                    Open in Google Maps
+                  </span>
+                </div>
+              </a>
+
               <address className="not-italic flex items-start gap-3 bg-card border border-border rounded-2xl p-5">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" aria-hidden="true" />
-                <div>
+                <div className="flex-1">
                   <p className="font-bold text-foreground mb-1">Dubai, United Arab Emirates</p>
-                  <p className="text-sm text-muted-foreground">Contact us for the exact clinic address — we'll send you a pin on WhatsApp.</p>
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 mt-2">
+                    <a
+                      href="tel:+97148343287"
+                      className="text-sm text-primary font-bold hover:underline focus:outline-none focus-visible:underline"
+                    >
+                      04 834 3287
+                    </a>
+                    <span className="hidden sm:inline text-muted-foreground/40">·</span>
+                    <a
+                      href="https://maps.app.goo.gl/xAxcYF1q4h7XQUjh6"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors focus:outline-none focus-visible:underline"
+                    >
+                      Get Directions →
+                    </a>
+                  </div>
                 </div>
               </address>
             </div>
@@ -238,9 +272,9 @@ export default function ContactPage() {
                 Thank you for contacting Safe Care Veterinary Clinic. One of our team members will be in touch with you shortly. For urgent matters, please call us directly.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="tel:+971000000000" className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold hover:bg-primary/90 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
+                <a href="tel:+97148343287" aria-label="Call Safe Care Veterinary Clinic on 04 834 3287" className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold hover:bg-primary/90 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
                   <Phone className="w-4 h-4" aria-hidden="true" />
-                  Call Us Now
+                  04 834 3287
                 </a>
                 <button onClick={() => setSubmitted(false)} className="inline-flex items-center justify-center bg-white text-foreground border border-border px-8 py-4 rounded-full font-bold hover:bg-secondary/40 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
                   Send Another Message

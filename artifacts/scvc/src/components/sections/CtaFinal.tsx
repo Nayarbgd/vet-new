@@ -67,7 +67,7 @@ export default function CtaFinal() {
 
         <div className="cta-fade flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-12 sm:mb-16">
           <a
-            href="tel:+971000000000"
+            href="tel:+97148343287"
             data-testid="btn-call-now-final"
             aria-label="Call Safe Care Veterinary Clinic now"
             className="inline-flex items-center justify-center gap-2 bg-white text-[#E11D79] px-8 sm:px-10 py-4 sm:py-5 rounded-full text-base sm:text-lg font-bold transition-all hover:shadow-xl hover:scale-105 active:scale-95 focus:outline-none focus-visible:ring-4 focus-visible:ring-white/50"

@@ -16,7 +16,7 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             <Link href="/" className="flex items-center gap-2 w-fit">
               <div className="bg-[#E11D79] p-2 rounded-full">
-                <Heart className="w-5 h-5 text-white" fill="currentColor" />
+                <Heart className="w-5 h-5 text-white" fill="currentColor" aria-hidden="true" />
               </div>
               <span className="font-bold text-2xl tracking-tight text-white">SCVC</span>
             </Link>
@@ -38,33 +38,48 @@ export default function Footer() {
 
           <div className="flex flex-col gap-4">
             <h4 className="font-bold text-white text-sm uppercase tracking-wider mb-2">Contact Us</h4>
-            <a href="tel:+971000000000" className="flex items-center gap-3 text-sm hover:text-white transition-colors group">
+            <a
+              href="tel:+97148343287"
+              aria-label="Call Safe Care Veterinary Clinic"
+              className="flex items-center gap-3 text-sm hover:text-white transition-colors group"
+            >
               <div className="bg-white/10 p-2 rounded-full group-hover:bg-[#E11D79]/30 transition-colors">
-                <Phone className="w-4 h-4" />
+                <Phone className="w-4 h-4" aria-hidden="true" />
               </div>
-              +971 00 000 0000
+              04 834 3287
             </a>
-            <a href="https://wa.me/971000000000" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm hover:text-white transition-colors group">
+            <a
+              href="https://wa.me/97148343287"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Chat with Safe Care Veterinary Clinic on WhatsApp"
+              className="flex items-center gap-3 text-sm hover:text-white transition-colors group"
+            >
               <div className="bg-white/10 p-2 rounded-full group-hover:bg-green-600/30 transition-colors">
-                <MessageCircle className="w-4 h-4" />
+                <MessageCircle className="w-4 h-4" aria-hidden="true" />
               </div>
               WhatsApp Us
             </a>
-            <div className="flex items-start gap-3 text-sm">
-              <div className="bg-white/10 p-2 rounded-full shrink-0 mt-0.5">
-                <MapPin className="w-4 h-4" />
+            <a
+              href="https://maps.app.goo.gl/xAxcYF1q4h7XQUjh6"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Get directions to Safe Care Veterinary Clinic in Dubai"
+              className="flex items-center gap-3 text-sm hover:text-white transition-colors group"
+            >
+              <div className="bg-white/10 p-2 rounded-full group-hover:bg-primary/30 transition-colors shrink-0">
+                <MapPin className="w-4 h-4" aria-hidden="true" />
               </div>
               <span>Dubai, United Arab Emirates</span>
-            </div>
+            </a>
           </div>
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-white/50">
           <div className="flex items-center gap-3 bg-white/5 px-4 py-2 rounded-full border border-white/10">
-            <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.6)]"></div>
+            <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.6)]" aria-hidden="true"></div>
             <span className="font-mono">Open & Serving Pets</span>
           </div>
-
           <p>&copy; 2025 Safe Care Veterinary Clinic. All rights reserved.</p>
         </div>
       </div>
