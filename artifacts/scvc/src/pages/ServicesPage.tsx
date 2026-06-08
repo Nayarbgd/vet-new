@@ -239,6 +239,15 @@ const faqSchema = {
   })),
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://scvc.ae/" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://scvc.ae/services" },
+  ],
+};
+
 function ServiceCard({ service, index }: { service: typeof services[0]; index: number }) {
   const [open, setOpen] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -365,7 +374,7 @@ export default function ServicesPage() {
         title="Veterinary Services Dubai | SCVC — Consultations, Surgery, Dental & More"
         description="Safe Care Veterinary Clinic offers comprehensive vet services in Dubai: general consultations, vaccinations, surgery, dental care, grooming, lab tests, deworming, microchipping and pet travel documentation."
         canonical="https://scvc.ae/services"
-        schema={faqSchema}
+        schema={[faqSchema, breadcrumbSchema]}
       />
       <Navbar />
 

@@ -144,6 +144,15 @@ const faqSchema = {
   })),
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://scvc.ae/" },
+    { "@type": "ListItem", position: 2, name: "Pet Taxi", item: "https://scvc.ae/pet-taxi" },
+  ],
+};
+
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
@@ -211,7 +220,7 @@ export default function PetTaxiPage() {
         title="Pet Taxi Dubai | Door-to-Door Veterinary Transport — SCVC"
         description="Safe Care Veterinary Clinic's Pet Taxi collects your pet from your door, delivers expert vet care, and returns them home safely. Covering all Dubai areas. Book now."
         canonical="https://scvc.ae/pet-taxi"
-        schema={faqSchema}
+        schema={[faqSchema, breadcrumbSchema]}
       />
       <Navbar />
 

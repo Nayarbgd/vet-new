@@ -9,6 +9,15 @@ import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import SeoHead from "@/components/SeoHead";
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://scvc.ae/" },
+    { "@type": "ListItem", position: 2, name: "Contact", item: "https://scvc.ae/contact" },
+  ],
+};
+
 const hours = [
   { day: "Monday – Friday", time: "8:00 AM – 8:00 PM" },
   { day: "Saturday", time: "9:00 AM – 6:00 PM" },
@@ -94,6 +103,7 @@ export default function ContactPage() {
         title="Contact Safe Care Veterinary Clinic Dubai | Call, WhatsApp or Visit"
         description="Get in touch with Safe Care Veterinary Clinic in Dubai. Call us, WhatsApp, or send a message to book an appointment for your dog, cat or rabbit. Open 7 days a week."
         canonical="https://scvc.ae/contact"
+        schema={breadcrumbSchema}
       />
       <Navbar />
 

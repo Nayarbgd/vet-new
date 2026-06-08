@@ -7,6 +7,15 @@ import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import SeoHead from "@/components/SeoHead";
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://scvc.ae/" },
+    { "@type": "ListItem", position: 2, name: "About", item: "https://scvc.ae/about" },
+  ],
+};
+
 const values = [
   {
     icon: Heart,
@@ -158,6 +167,7 @@ export default function AboutPage() {
         title="About Safe Care Veterinary Clinic Dubai | Our Vets & Story"
         description="Meet the team behind SCVC — Dubai's most compassionate veterinary clinic. Led by Dr. Mohammed Kizo, our vets provide expert, stress-free care for dogs, cats and rabbits."
         canonical="https://scvc.ae/about"
+        schema={breadcrumbSchema}
       />
       <Navbar />
 
