@@ -84,7 +84,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-secondary/50 rounded-[3rem] -rotate-3 scale-95 origin-bottom-right transition-transform" aria-hidden="true"></div>
 
             <img
-              src="https://images.unsplash.com/photo-1548767797-d8c844163c4a?w=600&q=80"
+              src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80"
               alt="Veterinarian gently holding a cat during a compassionate SCVC consultation"
               className="hero-image-element absolute top-0 right-6 sm:right-10 w-[58%] h-[50%] object-cover rounded-[1.5rem] sm:rounded-[2rem] shadow-xl z-20"
             />
@@ -94,8 +94,8 @@ export default function Hero() {
               className="hero-image-element absolute bottom-6 sm:bottom-10 right-0 w-[52%] h-[42%] object-cover rounded-[1.5rem] sm:rounded-[2rem] shadow-xl z-30"
             />
             <img
-              src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=600&q=80"
-              alt="Relaxed Persian cat comfortable in a stress-free vet environment"
+              src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&q=80"
+              alt="Relaxed cat comfortable in a stress-free vet environment"
               className="hero-image-element absolute top-16 sm:top-20 left-0 w-[43%] h-[38%] object-cover rounded-[1.5rem] sm:rounded-[2rem] shadow-lg z-10"
             />
             <img
