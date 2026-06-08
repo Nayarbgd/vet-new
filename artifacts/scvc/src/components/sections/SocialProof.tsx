@@ -2,29 +2,32 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "I couldn't be happier with the care my fur babies receive. The veterinarians are compassionate and always take time to explain everything.",
-    name: "Sarah M.",
-    img: "https://randomuser.me/api/portraits/women/12.jpg"
+    quote: "I recently used the grooming and bath service from SCVS VAT Clinic for my cat. The staff was friendly and professional, providing excellent care. The pick-up and drop-off service was reliable, making it super convenient. My cat came back looking clean and refreshed! Highly recommend! It was amazing service, thank you so much for the amazing service and affordable prices.",
+    name: "Mini Mini",
+    initials: "MM",
+    color: "#e91e8c",
+    meta: "2 reviews · Google"
   },
   {
-    quote: "The pick-up and drop-off service made everything incredibly convenient.",
-    name: "James R.",
-    img: "https://randomuser.me/api/portraits/men/32.jpg"
+    quote: "I couldn't be happier with the care my fur babies receives at this clinic. The veterinarians are compassionate and thorough, always taking time to explain every detail. The grooming team is gentle and skilled. Everyone on staff is friendly and clearly passionate about animals. Highly recommended!",
+    name: "Laika Odeclas",
+    initials: "LO",
+    color: "#8b5cf6",
+    meta: "Local Guide · 14 reviews · Google"
   },
   {
-    quote: "My rescued cat recovered thanks to their guidance and support.",
-    name: "Amira K.",
-    img: "https://randomuser.me/api/portraits/women/56.jpg"
+    quote: "Excellent care and very friendly staff. The veterinarian was kind, patient, and clearly explained everything. I felt confident my pet was in great hands. Highly recommend!",
+    name: "LV",
+    initials: "LV",
+    color: "#7c3aed",
+    meta: "4 reviews · Google"
   },
   {
-    quote: "The staff genuinely love animals. You can feel it from the moment you arrive.",
-    name: "Priya S.",
-    img: "https://randomuser.me/api/portraits/women/68.jpg"
-  },
-  {
-    quote: "They stayed beyond closing hours to make sure my pet was okay.",
-    name: "Omar A.",
-    img: "https://randomuser.me/api/portraits/men/75.jpg"
+    quote: "Thanks to Dr Mazen & Dr Kemo, you have been so generous and supportive for the whole process — starting from kidney cure to surgery, my cat was very safe with your treatment. All the time I am at work you have taken care of my Olive like it's your own! Thanks to the SCVC whole team, from the sweet clinic manager to the chauffeur who picked & dropped all the time. I am grateful and I recommend the clinic for life.",
+    name: "Heena Chhatwani",
+    initials: "HC",
+    color: "#2563eb",
+    meta: "14 reviews · Google"
   }
 ];
 
@@ -56,7 +59,7 @@ export default function SocialProof() {
           {[...testimonials, ...testimonials].map((t, idx) => (
             <article
               key={idx}
-              className="w-[300px] sm:w-[360px] md:w-[400px] shrink-0 bg-background rounded-3xl p-6 md:p-8 shadow-sm border border-border flex flex-col"
+              className="w-[300px] sm:w-[360px] md:w-[420px] shrink-0 bg-background rounded-3xl p-6 md:p-8 shadow-sm border border-border flex flex-col"
             >
               <div className="flex gap-1 mb-5" aria-label="5 stars">
                 {[1,2,3,4,5].map(i => (
@@ -67,16 +70,17 @@ export default function SocialProof() {
                 "{t.quote}"
               </p>
               <div className="flex items-center gap-3 mt-auto">
-                <img
-                  src={t.img}
-                  alt={t.name}
-                  loading="lazy"
-                  decoding="async"
-                  width="48"
-                  height="48"
-                  className="w-11 h-11 rounded-full object-cover border-2 border-primary/10"
-                />
-                <span className="font-bold font-sans text-foreground text-sm">{t.name}</span>
+                <div
+                  className="w-11 h-11 rounded-full flex items-center justify-center shrink-0 text-white font-bold text-sm"
+                  style={{ backgroundColor: t.color }}
+                  aria-hidden="true"
+                >
+                  {t.initials}
+                </div>
+                <div className="flex flex-col min-w-0">
+                  <span className="font-bold font-sans text-foreground text-sm leading-tight">{t.name}</span>
+                  <span className="text-xs text-muted-foreground truncate">{t.meta}</span>
+                </div>
               </div>
             </article>
           ))}
